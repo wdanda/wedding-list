@@ -1,0 +1,44 @@
+<div class="friends-list" *ngIf="friends">
+
+  <div class="inner">
+    <h3>Excluido</h3>
+    <table id="friends">
+      <tr>
+        <th>Name</th>
+        <th>Excluir</th>
+      </tr>
+      <tr *ngFor="let f of excludedFriends">
+        <td>
+          {{f.name}}
+        </td>
+        <td>
+          <button (click)="includeFriend(f)">Incluir</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="inner">
+    <h3>Incluidos</h3>
+    <table id="friends">
+      <tr>
+        <th>Name</th>
+        <th>Excluir</th>
+      </tr>
+      <tr *ngFor="let f of includedFriends">
+        <td>
+          {{f.name}}
+        </td>
+        <td>
+          <button (click)="excludeFriend(f)">Excluir</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<div *ngIf="!friends">
+  <h2>Upload & Override Friends</h2>
+  <input type="file" #file (change)="onFilesAdded(file.files)" multiple />
+</div>

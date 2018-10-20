@@ -1,0 +1,30 @@
+.friends-list {
+  display: flex;
+}
+
+.inner {
+  margin-right: 2rem;
+}
+
+#friends {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#friends td, #friends th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#friends tr:nth-child(even){background-color: #5a5a5a;}
+
+#friends tr:hover {background-color: rgb(148, 148, 148);}
+
+#friends th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(48, 48, 61);
+  color: white;
+}
