@@ -15,15 +15,14 @@ export class FriendsStorageService {
       console.error('Person is required');
     }
     const friends = JSON.parse(localStorage.getItem(this.storageKey + person));
-    console.log('getfriends', localStorage.getItem(this.storageKey + person));
-    return <Friend[]> friends.friends;
+    return <Friend[]> friends;
   }
 
   saveFriends(person: string, friends: Friend[]) {
     if (!person) {
       console.error('Person is required');
     }
-    console.log('save', friends)
+    console.log('save', friends);
     localStorage.setItem(this.storageKey + person, JSON.stringify(friends));
   }
 

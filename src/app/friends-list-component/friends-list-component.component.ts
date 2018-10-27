@@ -48,9 +48,14 @@ export class FriendsListComponentComponent implements OnInit, OnChanges {
     const reader = new FileReader();
     reader.readAsText(file);
     reader.onload = () => {
+      const data = JSON.parse(reader.result.toString());
+      if (!data || !data.friends) {
+        console.warn('Unable to parse friends file');
+        return;
+      }
       this.friendsStorage.saveFriends(
         this.person,
-        <Friend[]> JSON.parse(reader.result.toString())
+        <Friend[]> data.friends
       );
       this.getFriends();
     };
